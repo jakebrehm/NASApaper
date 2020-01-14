@@ -15,8 +15,8 @@ import requests
 
 # Get the NASA APoD API key from the configuration file
 config = configparser.ConfigParser()
-config.read(r'config.ini')
-api_key = config['credentials']['api key']
+config.read('config.ini')
+api_key = config.get('credentials', 'api key')
 
 # Construct and connect to the URL
 api_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
